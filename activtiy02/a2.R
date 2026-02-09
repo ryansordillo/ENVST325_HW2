@@ -63,6 +63,24 @@ plot(w$dateF, w$gheight.ft, type="b", pch=19, xlab="Date",
      ylab = "Stage height (ft)")
 
 
+#Question 2
+#FISHEATING CREEK AT PALMDALE: "2017-09-11 03:00:00 EDT"
+#Peace River: 2017-09-08 00:00:00 EDT
+# WITHLACOOCHEE RIVER: 2017-09-11 08:15:00 EDT
+
+
+#Question 3
+most_major <- floods %>% #filter floods
+  group_by(names) %>% # group by name
+  filter(gheight.ft >= major.ft) #observations with height more than or equal to the major flood height
+
+most_major$names[which.max(most_major$gheight.ft-most_major$major.ft)]
+print(max(most_major$gheight.ft-most_major$major.ft))
+#Peace River
+
+#Question 4
+
+
 
 
 
